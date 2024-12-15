@@ -93,7 +93,6 @@ tabs = st.tabs(["ていあん", "つかいかた"])
 # 「ていあん」タブ
 
 with tabs[0]:
-    col1, col2, col3 = st.columns(3)
 
 
     # 出発地指定
@@ -120,9 +119,8 @@ with tabs[0]:
             with st.spinner("ライドくん考え中..."):
                 try:
                     output_content_text = run_gpt(from_station, destination_station, yutari_tagging)
-                    st.success("ライドくんの答えがまとまりました！")
-                    with col2:
-                        st.image(characterimg)
+                    st.image(characterimg)
+                    st.success("ライドくんの答えがまとまりました！")                    
                     st.image(answerimg)
                     st.write(output_content_text)
                 except Exception as e:
