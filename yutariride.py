@@ -2,15 +2,16 @@ import streamlit as st # フロントエンドを扱うstreamlitの機能をイ�
 import requests # リクエストするための機能をインポート
 from openai import OpenAI # openAIのchatGPTのAIを活用するための機能をインポート
 from PIL import Image #画像を取り扱うためにインポート
+import os
 
 # ページ設定
 st.set_page_config(page_title="ゆったりライド", page_icon=":train2:", layout="wide")
 
+
 # アクセスの為のキーをos.environ["OPENAI_API_KEY"]に代入し、設定
 
-import os # OSが持つ環境変数OPENAI_API_KEYにAPIを入力するためにosにアクセスするためのライブラリをインポート
 # ここにご自身のAPIキーを入力してください！
-os.environ["OPENAI_API_KEY"]
+api_key = os.environ.get("OPENAI_API_KEY")
 
 # openAIの機能をclientに代入
 client = OpenAI()
