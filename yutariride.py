@@ -3,6 +3,8 @@ import requests # リクエストするための機能をインポート
 from openai import OpenAI # openAIのchatGPTのAIを活用するための機能をインポート
 from PIL import Image #画像を取り扱うためにインポート
 
+# ページ設定
+st.set_page_config(page_title="ゆったりライド", page_icon=":train2:", layout="wide")
 
 # アクセスの為のキーをos.environ["OPENAI_API_KEY"]に代入し、設定
 
@@ -13,8 +15,7 @@ os.environ["OPENAI_API_KEY"]
 # openAIの機能をclientに代入
 client = OpenAI()
 
-# ページ設定
-st.set_page_config(page_title="ゆったりライド", page_icon=":train2:", layout="wide")
+
 
 #駅名リストの作成
 station_names = [] 
